@@ -5,8 +5,8 @@ services:
     build: ./octoprint
     container_name: octoprint
     restart: always
-    volumes:
-      - ./data/:/home/octoprint/.octoprint/
+#    volumes:
+#      - ./data/:/home/octoprint/.octoprint/
 #      - ./data/static:/home/octoprint/.local/lib/python3.10/site-packages/octoprint/static/
 
   nginx:
