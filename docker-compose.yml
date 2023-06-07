@@ -5,6 +5,9 @@ services:
     build: ./octoprint
     container_name: octoprint
     restart: always
+    volumes:
+      - ./data/octoprint:/home/octoprint/.octoprint/
+      - ./data/static:/home/octoprint/.local/lib/python3.10/site-packages/octoprint/static/
 
   nginx:
     image: nginx:1-alpine
