@@ -7,7 +7,7 @@ services:
     restart: always
     volumes:
       - ./data/octoprint:/home/octoprint/.octoprint/
-      - ./data/static:/home/octoprint/.local/lib/python3.10/site-packages/octoprint/static/
+#      - ./data/static:/home/octoprint/.local/lib/python3.10/site-packages/octoprint/static/
 
   nginx:
     image: nginx:1-alpine
