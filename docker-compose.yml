@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  octoprint:
+    build: ./octoprint
+    container_name: octoprint
+    restart: always
+
+  nginx:
+    image: nginx:1-alpine
+    container_name: nginx
+    restart: always
+    depends_on:
+      - octoprint
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - nginx/default.conf:/etc/nginx/conf.d/default.conf
