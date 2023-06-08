@@ -2,6 +2,9 @@
  
 Install and run OctoPrint via Docker.
 
+## HOWTO
+- Execute `./setup.sh`
+
 ## TODO:
 - Clean nginx config
 - SSL
