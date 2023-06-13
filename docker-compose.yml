@@ -9,9 +9,22 @@ services:
       - ./data/:/home/octoprint/.octoprint/
 #      - ./data/static:/home/octoprint/.local/lib/python3.10/site-packages/octoprint/static/
 
-  nginx:
-    image: nginx:1-alpine
-    container_name: nginx
+#   nginx:
+#     image: nginx:1-alpine
+#     container_name: nginx
+#     restart: always
+#     depends_on:
+#       - octoprint
+#     ports:
+#       - 80:80
+#       - 443:443
+#     volumes:
+#       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+
+  caddy:
+    image: caddy:alpine
+    container_name: caddy
+    restart: always
     restart: always
     depends_on:
       - octoprint
@@ -19,4 +32,4 @@ services:
       - 80:80
       - 443:443
     volumes:
-      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./caddy/Caddyfile:/etc/caddy/Caddyfile:ro

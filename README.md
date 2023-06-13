@@ -11,6 +11,7 @@ Install and run OctoPrint via Docker.
 - Test with printer
 - Get camera streamer working
 - Serve/cache static data via nginx
+- Setup for non-RPi installs
 
 ## DONE:
 - Mount/persist OctoPrint data directory on host
