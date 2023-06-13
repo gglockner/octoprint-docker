@@ -1,4 +1,4 @@
 localhost
 
 reverse_proxy octoprint:5000
-header_up X-Scheme {scheme}
+header X-Scheme {scheme}
