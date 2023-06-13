@@ -32,3 +32,4 @@ services:
       - 443:443
     volumes:
       - ./caddy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./certs:/usr/local/etc/certs:ro
