@@ -25,7 +25,6 @@ services:
     image: caddy:alpine
     container_name: caddy
     restart: always
-    restart: always
     depends_on:
       - octoprint
     ports:
