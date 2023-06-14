@@ -1,6 +1,6 @@
 # octoprint-docker
  
-Install and run OctoPrint via Docker.
+Install and run OctoPrint via Docker microservices.
 
 ## HOWTO
 - Execute `./setup.sh`

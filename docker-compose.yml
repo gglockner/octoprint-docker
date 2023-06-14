@@ -6,7 +6,7 @@ services:
     container_name: octoprint
     restart: always
     volumes:
-      - ./data/:/home/octoprint/.octoprint/
+      - ./data/home:/home/octoprint
 #      - ./data/static:/home/octoprint/.local/lib/python3.10/site-packages/octoprint/static/
     devices:
       - /dev/ttyACM0:/dev/ttyACM0
