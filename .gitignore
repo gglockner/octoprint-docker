@@ -1,3 +1,5 @@
 camera-streamer/raspberrypi-archive-stable.gpg
 camera-streamer/raspi.list
 data/
+certs/
+caddy/Caddyfile
