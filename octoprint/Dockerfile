@@ -13,8 +13,8 @@ FROM python:3.10-alpine as runner
 
 RUN adduser -D octoprint
 
-COPY --from=compiler /opt/octoprint /opt/octoprint
-RUN chown -R octoprint:octoprint /opt/octoprint
+COPY --from=compiler $VENV $VENV
+RUN chown -R octoprint:octoprint $VENV
 
 USER octoprint
 WORKDIR /home/octoprint
