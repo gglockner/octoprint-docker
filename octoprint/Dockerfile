@@ -1,5 +1,4 @@
-FROM python:3.10-alpine as compiler
-ENV PYTHONUNBUFFERED 1
+FROM python:3.10-alpine
 
 ENV VENV=/opt/octoprint
 ENV PIP=$VENV/bin/pip
@@ -9,11 +8,7 @@ RUN python -mvenv $VENV
 RUN $PIP install --upgrade pip
 RUN $PIP install OctoPrint
 
-FROM python:3.10-alpine as runner
-
 RUN adduser -D octoprint
-
-COPY --from=compiler $VENV $VENV
 RUN chown -R octoprint:octoprint $VENV
 
 USER octoprint
