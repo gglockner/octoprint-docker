@@ -8,6 +8,8 @@ services:
     volumes:
       - ./data/:/home/octoprint/.octoprint/
 #      - ./data/static:/home/octoprint/.local/lib/python3.10/site-packages/octoprint/static/
+    devices:
+      - /dev/ttyACM0:/dev/ttyACM0
 
 #   nginx:
 #     image: nginx:1-alpine
