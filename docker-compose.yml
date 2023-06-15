@@ -4,7 +4,8 @@ services:
   octoprint:
     build:
       context: ./octoprint
-      label: octoprint:latest
+      tags:
+        - "octoprint:latest"
     container_name: octoprint
     restart: always
     volumes:
