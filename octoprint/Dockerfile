@@ -1,11 +1,14 @@
 FROM python:3.10-alpine
 
+# Prerequisites
 RUN apk add gcc musl-dev libffi-dev linux-rpi
+
+# Copy OctoPrint start script
 COPY opstart.sh /usr/local/bin/opstart.sh
 RUN chmod +x /usr/local/bin/opstart.sh
 
+# Setup OctoPrint user
 RUN adduser -D octoprint
-
 USER octoprint
 WORKDIR /home/octoprint
 
