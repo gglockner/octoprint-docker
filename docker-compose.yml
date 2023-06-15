@@ -2,7 +2,9 @@ version: '3'
 
 services:
   octoprint:
-    build: ./octoprint
+    build:
+      context: ./octoprint
+      label: octoprint:latest
     container_name: octoprint
     restart: always
     volumes:
