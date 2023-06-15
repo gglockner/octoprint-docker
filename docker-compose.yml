@@ -27,4 +27,4 @@ services:
 
 volumes:
   ophome:
-    name: "ophome"
+    name: "octoprint_home"
