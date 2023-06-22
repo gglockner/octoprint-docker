@@ -37,6 +37,7 @@ services:
     container_name: camera
     privileged: true
     restart: always
+    command: ["--camera-type=libcamera", "--camera-format=YUYV", "--camera-width=2304", "-camera-height=1296", "--camera-fps=30", "--camera-nbufs=2", "--camera-snapshot.height=1080", "--camera-video.height=720", "--camera-stream.height=480", "--camera-options=AfMode=2", "--camera-options=AfRange=2"]
     volumes:
       - /run/udev:/run/udev:ro
 

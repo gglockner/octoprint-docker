@@ -10,4 +10,4 @@ RUN apt install --no-install-recommends -y /tmp/camera-streamer-raspi.deb && rm 
 
 EXPOSE 8080
 
-CMD camera-streamer --camera-type=libcamera
+ENTRYPOINT ["camera-streamer"]
