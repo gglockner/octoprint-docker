@@ -10,8 +10,8 @@ services:
     restart: always
     volumes:
       - ophome:/home/octoprint
-    devices:
-      - /dev/ttyACM0:/dev/ttyACM0 # Printer connection
+#     devices:
+#       - /dev/ttyACM0:/dev/ttyACM0 # Printer connection
 
   proxy:
     image: caddy:alpine
@@ -27,6 +27,17 @@ services:
       - ./caddy/Caddyfile:/etc/caddy/Caddyfile:ro
       - ./certs:/usr/local/etc/certs:ro
 #       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+
+  camera:
+    build:
+      context: ./camera-streamer
+      tags:
+        - "camera-streamer:bullseye-slim"
+    container_name: camera-streamer
+    privileged: true
+    restart: always
+    volumes:
+      - /run/udev:/run/udev:ro
 
 volumes:
   # Persistent volume for OctoPrint data and installation
