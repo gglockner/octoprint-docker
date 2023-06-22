@@ -29,11 +29,12 @@ services:
 #       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
 
   camera:
+  # H/T: https://community.octoprint.org/t/using-libcamera-with-octoprint-the-docker-way/43951
     build:
       context: ./camera-streamer
       tags:
         - "camera-streamer:bullseye-slim"
-    container_name: camera-streamer
+    container_name: camera
     privileged: true
     restart: always
     volumes:

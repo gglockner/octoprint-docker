@@ -1,4 +1,7 @@
 localhost {
+  handle_path /webcam/* {
+    reverse_proxy camera:8080
+  }
   reverse_proxy octoprint:5000
   header X-Scheme {scheme}
 }
