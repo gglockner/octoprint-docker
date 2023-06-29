@@ -9,6 +9,8 @@ RUN chmod +x /usr/local/bin/opstart.sh
 
 # Setup OctoPrint user
 RUN adduser -D octoprint
+RUN adduser octoprint dialout
+
 USER octoprint
 WORKDIR /home/octoprint
 
