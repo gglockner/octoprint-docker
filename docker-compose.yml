@@ -10,8 +10,8 @@ services:
     restart: always
     volumes:
       - ophome:/home/octoprint
-#     devices:
-#       - /dev/ttyACM0:/dev/ttyACM0 # Printer connection
+    devices:
+      - /dev/ttyACM0:/dev/ttyACM0 # Printer connection
 
   proxy:
     image: caddy:alpine
