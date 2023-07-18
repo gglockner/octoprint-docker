@@ -12,7 +12,6 @@ Uses [camera-streamer](https://github.com/ayufan/camera-streamer) for the webcam
   - Snapshot URL: http://camera:8080/snapshot
 
 ## TODO
-- Push to public Github with a license
 - Documentation
 - Announce it
 - Add support for OctoPrint-CameraSettings
@@ -34,3 +33,4 @@ Uses [camera-streamer](https://github.com/ayufan/camera-streamer) for the webcam
 - Implement camera streamer
 - Test server and camera
 - Test snapshots and timelapse
+- Push to public Github with a license
