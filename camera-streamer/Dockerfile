@@ -10,9 +10,10 @@ ADD https://github.com/ayufan/camera-streamer/releases/download/v${CSVER}/camera
 ARG LCVER="0~git20230302+923f5d70-1"
 ADD http://archive.raspberrypi.org/debian/pool/main/libc/libcamera/libcamera0_${LCVER}_arm64.deb /tmp/libcamera0.deb
 
+ARG APT_INSTALL="apt install --no-install-recommends -y"
 RUN apt update && \
-  apt --fix-broken install --no-install-recommends -y /tmp/libcamera0.deb && \
-  apt install --no-install-recommends -y /tmp/camera-streamer-raspi.deb && \
+  $APT_INSTALL --fix-broken /tmp/libcamera0.deb && \
+  $APT_INSTALL /tmp/camera-streamer-raspi.deb && \
   rm -fr /tmp/*.deb /var/lib/apt/lists/*
 
 EXPOSE 8080
