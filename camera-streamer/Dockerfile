@@ -5,13 +5,15 @@ COPY raspi.list /etc/apt/sources.list.d
 
 RUN apt update
 
-ARG VER=0.2.4
-ADD https://github.com/ayufan/camera-streamer/releases/download/v$VER/camera-streamer-raspi_$VER.bullseye_arm64.deb /tmp/camera-streamer-raspi.deb
+ARG CSVER=0.2.4
+ADD https://github.com/ayufan/camera-streamer/releases/download/v$CSVER/camera-streamer-raspi_$CSVER.bullseye_arm64.deb /tmp/camera-streamer-raspi.deb
 
 # Workaround for libcamera0 version dependency
-RUN apt install --no-install-recommends -y libcamera0 libavcodec58 libavformat58 libavutil56 libbasicusageenvironment1 libgroupsock8 liblivemedia77
-RUN dpkg --ignore-depends=libcamera0 -i /tmp/camera-streamer-raspi.deb && rm /tmp/camera-streamer-raspi.deb && apt clean
-RUN cd /usr/lib/aarch64-linux-gnu/ && ln -s libcamera.so.0.0.5 libcamera.so.0.0.4 && ln -s libcamera-base.so.0.0.5 libcamera-base.so.0.0.4
+ARG LCVER="0~git20230302+923f5d70-1"
+ADD http://archive.raspberrypi.org/debian/pool/main/libc/libcamera/libcamera0_$LCVER_arm64.deb /tmp/libcamera0.deb
+
+RUN apt --fix-broken install --no-install-recommends -y /tmp/libcamera0.deb
+RUN apt install --no-install-recommends -y /tmp/camera-streamer-raspi.deb && rm /tmp/*.deb && apt clean
 
 EXPOSE 8080
 
