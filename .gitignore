@@ -2,3 +2,4 @@ camera-streamer/raspberrypi-archive-stable.gpg
 camera-streamer/raspi.list
 certs/
 caddy/Caddyfile
+camera-streamer/alpine-instructions.txt
