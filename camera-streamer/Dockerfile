@@ -13,8 +13,7 @@ ADD http://archive.raspberrypi.org/debian/pool/main/libc/libcamera/libcamera0_${
 RUN apt update && \
   apt --fix-broken install --no-install-recommends -y /tmp/libcamera0.deb && \
   apt install --no-install-recommends -y /tmp/camera-streamer-raspi.deb && \
-  rm /tmp/*.deb && \
-  rm -rf /var/lib/apt/lists/*
+  rm -fr /tmp/*.deb /var/lib/apt/lists/*
 
 EXPOSE 8080
 
