@@ -15,7 +15,6 @@ services:
 
   proxy:
     image: caddy:alpine
-#     image: nginx:1-alpine
     container_name: proxy
     restart: always
     depends_on:
@@ -26,7 +25,6 @@ services:
     volumes:
       - ./caddy/Caddyfile:/etc/caddy/Caddyfile:ro
       - ./certs:/usr/local/etc/certs:ro
-#       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
 
   camera:
   # H/T: https://community.octoprint.org/t/using-libcamera-with-octoprint-the-docker-way/43951
