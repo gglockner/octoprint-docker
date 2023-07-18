@@ -1,6 +1,6 @@
 # octoprint-docker
  
-Install and run OctoPrint via Docker microservices.
+Run OctoPrint as Docker microservices.
 
 Uses [camera-streamer](https://github.com/ayufan/camera-streamer) for the webcam.
 
@@ -12,7 +12,6 @@ Uses [camera-streamer](https://github.com/ayufan/camera-streamer) for the webcam
   - Snapshot URL: http://camera:8080/snapshot
 
 ## TODO
-- Test snapshots and timelapse
 - Push to public Github with a license
 - Documentation
 - Announce it
@@ -34,3 +33,4 @@ Uses [camera-streamer](https://github.com/ayufan/camera-streamer) for the webcam
 - Persist Python packages on host
 - Implement camera streamer
 - Test server and camera
+- Test snapshots and timelapse
