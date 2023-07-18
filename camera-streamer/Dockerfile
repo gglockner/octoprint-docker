@@ -11,6 +11,7 @@ ADD https://github.com/ayufan/camera-streamer/releases/download/v$VER/camera-str
 # Workaround for libcamera0 version dependency
 RUN apt install --no-install-recommends -y libcamera0 libavcodec58 libavformat58 libavutil56 libbasicusageenvironment1 libgroupsock8 liblivemedia77
 RUN dpkg --ignore-depends=libcamera0 -i /tmp/camera-streamer-raspi.deb && rm /tmp/camera-streamer-raspi.deb && apt clean
+RUN cd /usr/lib/aarch64-linux-gnu/ && ln -s libcamera.so.0.0.5 libcamera.so.0.0.4 && ln -s libcamera-base.so.0.0.5 libcamera-base.so.0.0.4
 
 EXPOSE 8080
 
