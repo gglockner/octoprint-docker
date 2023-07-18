@@ -1,7 +1,7 @@
 FROM python:3.10-alpine
 
 # Prerequisites
-RUN apk add gcc musl-dev libffi-dev linux-rpi
+RUN apk add gcc musl-dev libffi-dev linux-rpi ffmpeg
 
 # Copy OctoPrint start script
 COPY opstart.sh /usr/local/bin/opstart.sh

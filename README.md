@@ -2,21 +2,26 @@
  
 Install and run OctoPrint via Docker microservices.
 
-Uses the 
+Uses [camera-streamer](https://github.com/ayufan/camera-streamer) for the webcam.
 
 ## HOWTO
 - Execute `./setup.sh`
 - Set serverRestartCommand: killall octoprint
+- Set classic camera to:
+  - Stream URL: /webcam/stream
+  - Snapshot URL: http://camera:8080/snapshot
 
 ## TODO
-- Test server and camera
+- Test snapshots and timelapse
 - Push to public Github with a license
 - Documentation
 - Announce it
+- Add support for OctoPrint-CameraSettings
 - Add install docker to setup script (?)
 - Support to restart docker containers
-- Initial Caddyfile configuration
+- Automate initial Caddyfile configuration
 - Serve/cache static data via web proxy
+- Setup camera restart commands
 - Support for non-RPi installs
 - Slim down camera-streamer by installing from source on alpine
 
@@ -28,3 +33,4 @@ Uses the
 - Migrate home data from bind mount to volumes
 - Persist Python packages on host
 - Implement camera streamer
+- Test server and camera
