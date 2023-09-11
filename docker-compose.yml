@@ -12,6 +12,8 @@ services:
       - ophome:/home/octoprint
     devices:
       - /dev/ttyACM0:/dev/ttyACM0 # Printer connection
+    environment:
+      - TZ=America/Los_Angeles
 
   proxy:
     image: caddy:alpine

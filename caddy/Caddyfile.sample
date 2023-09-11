@@ -1,7 +1,9 @@
 localhost {
-  handle_path /webcam/* {
-    reverse_proxy camera:8080
-  }
-  reverse_proxy octoprint:5000
-  header X-Scheme {scheme}
+	handle_path /webcam/* {
+		reverse_proxy camera:8080
+		header Cache-Control no-cache
+	}
+	reverse_proxy octoprint:5000
+	header X-Scheme {scheme}
+	header /static/webassets/* Cache-Control max-age=7200
 }
