@@ -5,5 +5,5 @@ localhost {
 	}
 	reverse_proxy octoprint:5000
 	header X-Scheme {scheme}
-	header /static/webassets/* Cache-Control max-age=7200
+	header /static/webassets/* Cache-Control max-age=600
 }
