@@ -1,4 +1,4 @@
-FROM python:3.10-alpine
+FROM python:3.12-alpine
 
 # Prerequisites
 RUN apk add gcc g++ musl-dev libffi-dev linux-rpi ffmpeg tzdata

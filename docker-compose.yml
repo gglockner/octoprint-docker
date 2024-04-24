@@ -5,7 +5,7 @@ services:
     build:
       context: ./octoprint
       tags:
-        - "octoprint:python3.10-alpine"
+        - "octoprint:python3.12-alpine"
     container_name: octoprint
     restart: always
     volumes:
